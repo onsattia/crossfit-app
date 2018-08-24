@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Login from './components/Login';
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './App.css';
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Login />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+        </div>
+      </BrowserRouter>
     );
   }
 }
