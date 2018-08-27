@@ -1,14 +1,12 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import './Members.css';
 
-class Members extends Component {
-    render() {
-        return (
-            <Fragment>
-          
-            </Fragment>
-        )
-    }
+const members = () => {
+    return (
+        <div>
+            <h1>Members</h1>
+        </div>
+    );
 }
 
-export default Members;
+export default members;

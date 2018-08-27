@@ -1,19 +1,17 @@
-import React, { Component, Fragment } from 'react';
-import './Home';
+import React, { Fragment } from 'react';
+import './Home.css';
 
-class Home extends Component {
-    render() {
-        return (
-            <Fragment>
-                <div className="Home_card">
-                    <img src="img_avatar.png" alt="Avatar" />
-                    <div class="container">
-                        <h4><b>WOD</b></h4> 
-                    </div>
+const home = ()  => {
+    return (
+        <Fragment>
+            <div className="Home_card">
+                <img src="img_avatar.png" alt="Avatar" />
+                <div class="container">
+                    <h4><b>WOD</b></h4> 
                 </div>
-            </Fragment>
-        )
-    }
+            </div>
+        </Fragment>
+    )
 }
 
-export default Home;
+export default home;

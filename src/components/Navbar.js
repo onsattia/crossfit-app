@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 import { Route, Link, Switch } from 'react-router-dom';
 import Home from './Home/Home';
-import Login  from './Login';
-import Logout from './Logout';
+import Login  from '../container/Auth/Auth';
+import Logout from '../container/Auth/Logout/Logout';
 import Members  from './Members/Members';
 
 
@@ -25,7 +22,7 @@ const styles = {
   },
 };
 
-function Navbar(props) {
+const navbar = (props) => {
   const { classes } = props;
   return (
     <div className={classes.root} color="primary">
@@ -38,6 +35,7 @@ function Navbar(props) {
           <Button color="inherit"><Link to="/logout">Logout</Link></Button>
         </Toolbar>
       </AppBar>
+
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/members" exact component={Members} />
@@ -47,14 +45,12 @@ function Navbar(props) {
           () => <h3>Not Found</h3>
         }/>
       </Switch>
-
-
     </div>
   );
 }
 
-Navbar.propTypes = {
+navbar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Navbar);
+export default withStyles(styles)(navbar);
