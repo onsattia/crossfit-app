@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 import { Route, Link, Switch } from 'react-router-dom';
-import Home from './Home/Home';
+import Home from '../container/Home/Home';
 import Login  from '../container/Auth/Auth';
 import Logout from '../container/Auth/Logout/Logout';
 import Members  from './Members/Members';

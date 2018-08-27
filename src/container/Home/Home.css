@@ -1,0 +1,70 @@
+.container {
+    margin-top: 100px;
+    width: 750px;
+}
+
+.left {
+    float: left;
+}
+  
+.right {
+    float: right;
+    margin-left: 10px;
+}
+
+h2 { 
+    color: #c72e45;
+    margin: 0 0 22px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;    
+}
+
+caption {
+    padding: 20px;
+    color: #c72e45; 
+    font-weight: bold;
+}
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+th { 
+    background: #008c9e; 
+    color: white; 
+    font-weight: bold; 
+}
+td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+}
+
+.space {
+    height: 30px;
+}
+
+.table {
+    width: 60%;
+    margin: auto;
+}
+
+

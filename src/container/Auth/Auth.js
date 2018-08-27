@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import './Auth.css';
 
-class Login extends Component {
+class Auth extends Component {
 constructor(props){
   super(props);
   this.state={
@@ -85,4 +85,4 @@ render() {
   }
 }
 
-export default Login;
+export default Auth;
