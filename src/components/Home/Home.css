@@ -9,7 +9,6 @@
   
 .right {
     float: right;
-    margin-left: 10px;
 }
 
 h2 { 
@@ -19,6 +18,7 @@ h2 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: left;  
 }
 
 ul {
@@ -28,7 +28,8 @@ ul {
 
 li {
     list-style-type: none;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;  
+    text-align: left;
 }
 
 caption {
@@ -62,7 +63,7 @@ td, th {
     height: 30px;
 }
 
-.table {
+.tableContainer {
     width: 60%;
     margin: auto;
 }

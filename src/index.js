@@ -9,4 +9,5 @@ const app = (
         <App />
     </BrowserRouter>
 )
+
 ReactDOM.render(app, document.getElementById('root'));

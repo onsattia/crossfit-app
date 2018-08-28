@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classes from './Home.css';
 import Aux from '../../hoc/Aux';
 import logo from '../../assets/images/logo.png';
 
-class Home extends Component {
-    componentWillMount(){
-        console.log('componentWillMount')
-    }
-    render () {
+const home = () => {
         return (
             <Aux className={classes.Home}>
                 <div className={classes.container}>
@@ -24,7 +20,7 @@ class Home extends Component {
                         </ul>
                     </div>
                 </div>
-                <div className={classes.table}>
+                <div className={classes.tableContainer}>
                    <table>
                         <caption>PLANNING</caption>
                         <thead>
@@ -131,7 +127,6 @@ class Home extends Component {
                 </div>
             </Aux>
         )
-    }
 }
 
-export default Home;
+export default home;
