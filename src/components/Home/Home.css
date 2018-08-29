@@ -36,6 +36,7 @@ caption {
     padding: 20px;
     color: #c72e45; 
     font-weight: bold;
+    text-align: center;
 }
 /* 
 Generic Styling, for Desktops/Laptops 
@@ -49,7 +50,7 @@ tr:nth-of-type(odd) {
     background: #eee; 
 }
 th { 
-    background: #008c9e; 
+    background: black; 
     color: white; 
     font-weight: bold; 
 }

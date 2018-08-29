@@ -1,30 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Layout from './components/Layout/Layout';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
+import Members from './components/Members/Members';
 import Signup from "./containers/Singup/Signup";
 import Login from "./containers/Login/Login";
-import Logout from "./containers/Login/SignOut/SignOut";
+import Logout from "./containers/SignOut/SignOut";
+import withAuthentication from './hoc//withAuthentication';
 
-import classes from './App.css';
+import './App.css';
 
-class App extends Component {
+const app = () => (
+    <Layout>
+        <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/signup" exact component={Signup} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/members" exact component={Members} />
+        <Route path="/logout" exact component={Logout} />
+      </Switch> 
+    </Layout>  
+);
 
-  render() {
-    return (
-        <div className={classes.App}>
-          <Layout>
-             <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/signup" exact component={Signup} />
-              <Route path="/login" exact component={Login} />
-              <Route path="/logout" exact component={Logout} />
-            </Switch> 
-          </Layout>  
-          <footer></footer>        
-        </div>
-    );
-  }
-}
 
-export default App;
+export default withAuthentication(app);

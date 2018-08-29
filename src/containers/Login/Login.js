@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-
 import { SignUpLink } from '../Singup/Signup';
 import { auth } from '../../firebase';
 

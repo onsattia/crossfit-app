@@ -1,27 +1,28 @@
 import React from 'react';
-import classes from './Home.css';
+import './Home.css';
+import { Table, Grid } from 'react-bootstrap';
 import Aux from '../../hoc/Aux';
 import logo from '../../assets/images/logo.png';
+import withAuthorization from '../../hoc/withAuthorization';
 
 const home = () => {
         return (
-            <Aux className={classes.Home}>
-                <div className={classes.container}>
-                    <div className={classes.left}>
+            <Aux>
+                <Grid>
+                    <div>
                         <img src={logo} alt="Logo" />
                     </div>
-
-                    <div className={classes.right}>
-                        <h2 className={classes.h1}>OPENING HOURS</h2>
+                    <div>
+                        <h2>OPENING HOURS</h2>
                         <ul>
                             <li><strong>Monday-Friday: </strong>10h to 12h - 15h to 20h</li>
                             <li><strong>Saturday: </strong>Rest Day</li>
                             <li><strong>Sunday: </strong>9h to 11h</li>
                         </ul>
                     </div>
-                </div>
-                <div className={classes.tableContainer}>
-                   <table>
+                </Grid>
+                <div className="container">
+                   <Table striped bordered condensed hover>
                         <caption>PLANNING</caption>
                         <thead>
                             <tr>
@@ -65,7 +66,7 @@ const home = () => {
                                 <td></td>
                             </tr>
                             <tr> 
-                                <td colSpan="6" className={classes.space}></td>
+                                <td colSpan="6"></td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -123,10 +124,12 @@ const home = () => {
                                 <td></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             </Aux>
         )
 }
 
-export default home;
+const authCondition = (authUser) => !!authUser;
+
+export default withAuthorization(authCondition)(home);
