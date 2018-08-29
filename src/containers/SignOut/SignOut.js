@@ -11,7 +11,7 @@ componentWillMount () {
 
 render () {
   return(
-      <Redirect to="/login"/>
+      <Redirect to="/signin"/>
   )
 
 }

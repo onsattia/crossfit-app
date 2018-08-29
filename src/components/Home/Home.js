@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { Table, Grid } from 'react-bootstrap';
+import { Table, Grid, Row, Image, Col } from 'react-bootstrap';
 import Aux from '../../hoc/Aux';
 import logo from '../../assets/images/logo.png';
 import withAuthorization from '../../hoc/withAuthorization';
@@ -9,19 +9,19 @@ const home = () => {
         return (
             <Aux>
                 <Grid>
-                    <div>
-                        <img src={logo} alt="Logo" />
-                    </div>
-                    <div>
+                <Row>
+                    <Col xs={8} md={6}>
+                        <Image src={logo} rounded />
+                    </Col>
+                    <Col xs={8} md={6}>
                         <h2>OPENING HOURS</h2>
                         <ul>
                             <li><strong>Monday-Friday: </strong>10h to 12h - 15h to 20h</li>
                             <li><strong>Saturday: </strong>Rest Day</li>
                             <li><strong>Sunday: </strong>9h to 11h</li>
                         </ul>
-                    </div>
-                </Grid>
-                <div className="container">
+                    </Col>
+                </Row>
                    <Table striped bordered condensed hover>
                         <caption>PLANNING</caption>
                         <thead>
@@ -125,7 +125,7 @@ const home = () => {
                             </tr>
                         </tbody>
                     </Table>
-                </div>
+                </Grid>
             </Aux>
         )
 }

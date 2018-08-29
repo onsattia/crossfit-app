@@ -2,14 +2,16 @@
     margin-top: 100px;
     width: 750px;
 }
-
-.left {
+ img {
+     width: 300px
+ }
+/* .left {
     float: left;
 }
   
 .right {
     float: right;
-}
+} */
 
 h2 { 
     color: #c72e45;
@@ -18,7 +20,6 @@ h2 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: left;  
 }
 
 ul {
@@ -59,7 +60,7 @@ td, th {
     border: 1px solid #ccc; 
     text-align: left; 
 }
-
+/* 
 .space {
     height: 30px;
 }
@@ -67,6 +68,6 @@ td, th {
 .tableContainer {
     width: 60%;
     margin: auto;
-}
+} */
 
 

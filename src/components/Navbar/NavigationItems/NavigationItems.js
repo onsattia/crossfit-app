@@ -27,8 +27,8 @@ const NavigationAuth = () =>
 
 const NavigationNonAuth = () =>
     <Nav pullRight>
-        <LinkContainer to="/login">
-            <NavItem eventKey={1}>Login</NavItem>
+        <LinkContainer to="/signin">
+            <NavItem eventKey={1}>Sign In</NavItem>
         </LinkContainer> 
         <LinkContainer to="/signup">
             <NavItem eventKey={2}>Sing Up</NavItem>

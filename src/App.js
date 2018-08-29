@@ -13,11 +13,11 @@ import './App.css';
 const app = () => (
     <Layout>
         <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/signup" exact component={Signup} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/members" exact component={Members} />
-        <Route path="/logout" exact component={Logout} />
+            <Route path="/" exact component={Home} />
+            <Route path="/signup" exact component={Signup} />
+            <Route path="/signin" exact component={Login} />
+            <Route path="/members" exact component={Members} />
+            <Route path="/logout" exact component={Logout} />
       </Switch> 
     </Layout>  
 );

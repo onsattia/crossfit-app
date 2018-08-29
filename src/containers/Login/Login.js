@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { Grid, Form, FormGroup, ControlLabel, FormControl, Button, Col, Alert} from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { SignUpLink } from '../Singup/Signup';
 import { auth } from '../../firebase';
+import './Login.css';
 
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>Login</h1>
+  <Grid>
+    <h2>Sign In</h2>
     <Login history={history} />
-    <SignUpLink />
-  </div>
+    <Col smOffset={2} sm={10}>
+      <SignUpLink />
+    </Col>
+  </Grid>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -23,7 +27,6 @@ const INITIAL_STATE = {
 class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...INITIAL_STATE };
   }
 
@@ -61,27 +64,41 @@ class Login extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <br/>
-        <input
-          value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <br/>
-        <button disabled={isInvalid} type="submit">
-          Login
-        </button>
-        <br/>
-        { error && <p>{error.message}</p> }
-      </form>
+        <Form horizontal onSubmit={this.onSubmit}>
+          <FormGroup controlId="formHorizontalEmail">
+            <Col componentClass={ControlLabel} sm={2}>
+              Email
+            </Col>
+            <Col sm={10}>
+              <FormControl  
+                value={email}
+                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                type="text"
+                placeholder="Email Address"
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup controlId="formHorizontalPassword">
+            <Col componentClass={ControlLabel} sm={2}>
+              Password
+            </Col>
+            <Col sm={10}>
+              <FormControl 
+                value={password}
+                onChange={event => this.setState(byPropKey('password', event.target.value))}
+                type="password"
+                placeholder="Password" 
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col smOffset={2} sm={10}>
+              <Button disabled={isInvalid} type="submit">Sign In</Button>
+            </Col>
+          </FormGroup>
+            { error &&  <Alert bsStyle="danger"><p>{error.message}</p></Alert> }
+        </Form>
     );
   }
 }
