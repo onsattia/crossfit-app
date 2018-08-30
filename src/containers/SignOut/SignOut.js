@@ -10,7 +10,7 @@ componentWillMount () {
 }
 
 render () {
-  return(
+  return (
       <Redirect to="/signin"/>
   )
 

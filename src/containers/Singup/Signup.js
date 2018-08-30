@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Grid, Form, FormGroup, ControlLabel, FormControl, Button, Col, Alert} from 'react-bootstrap';
 import { auth, db } from '../../firebase';
 
@@ -143,16 +143,8 @@ render() {
   }
 }
 
-const SignUpLink = () =>
-  <p>
-    Don't have an account?
-    {' '}
-    <Link to={"/signup"}>Sign Up</Link>
-  </p>
-
 export default withRouter(SignUpPage);
 
 export {
-  SignUpForm,
-  SignUpLink,
+  SignUpForm
 };

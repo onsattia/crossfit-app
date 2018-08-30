@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
 import AuthUserContext from '../../../AuthUserContext';
 // import './NavigationItems.css';
 
@@ -14,25 +14,22 @@ const navigationItems = ({ authUser }) =>
 
 const NavigationAuth = () =>
     <Nav pullRight>
-        <LinkContainer to="/home">
-            <NavItem eventKey={3}>Home</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/members">
-            <NavItem eventKey={4}>Members</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/logout">
-            <NavItem eventKey={5}>Logout</NavItem>
-        </LinkContainer> 
+        <NavItem eventKey={2} componentClass={Link} href="/members" to="/members">
+            Members
+        </NavItem>
+        <NavItem eventKey={3} componentClass={Link} href="/logout" to="/logout">
+            Log out
+        </NavItem>
     </Nav>
 
 const NavigationNonAuth = () =>
     <Nav pullRight>
-        <LinkContainer to="/signin">
-            <NavItem eventKey={1}>Sign In</NavItem>
-        </LinkContainer> 
-        <LinkContainer to="/signup">
-            <NavItem eventKey={2}>Sing Up</NavItem>
-        </LinkContainer>   
+        <NavItem eventKey={4} componentClass={Link} href="/signin" to="/signin">
+            Sign In
+        </NavItem>
+        <NavItem eventKey={5} componentClass={Link} href="/signup" to="/signup">
+            Sign Up
+        </NavItem>   
     </Nav>
 
 export default navigationItems;

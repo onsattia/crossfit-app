@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { Grid, Form, FormGroup, ControlLabel, FormControl, Button, Col, Alert} from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
-import { SignUpLink } from '../Singup/Signup';
+import { withRouter, Link } from 'react-router-dom';
 import { auth } from '../../firebase';
 import './Login.css';
 
-const SignInPage = ({ history }) =>
+const LoginPage = ({ history }) =>
   <Grid>
     <h2>Sign In</h2>
     <Login history={history} />
-    <Col smOffset={2} sm={10}>
-      <SignUpLink />
+    <Col smOffset={2} sm={10} >
+      <p>
+        Don't have an account?
+        {' '}
+        <Link to={"/signup"}>Sign Up</Link>
+      </p>
     </Col>
   </Grid>
 
@@ -25,6 +28,7 @@ const INITIAL_STATE = {
 };
 
 class Login extends Component {
+
   constructor(props) {
     super(props);
     this.state = { ...INITIAL_STATE };
@@ -103,8 +107,8 @@ class Login extends Component {
   }
 }
 
-export default withRouter(SignInPage);
+export default withRouter(LoginPage);
 
 export {
-  Login,
+  Login
 };

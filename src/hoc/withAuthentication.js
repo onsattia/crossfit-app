@@ -14,12 +14,17 @@ const withAuthentication = (Component) => {
     }
 
     componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
-        authUser
-        ? this.setState({ authUser })
-        : this.setState({ authUser: null });
-    });
+        firebase.auth.onAuthStateChanged(authUser => {
+            if (authUser){
+                this.setState({ authUser });
+                localStorage.setItem('TOKEN', authUser.uid);
+            } else {
+                this.setState({ authUser: null });
+                localStorage.removeItem('TOKEN');
+            }   
+        });
     }
+
     render() {
         const { authUser } = this.state;
 

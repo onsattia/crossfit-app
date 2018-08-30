@@ -18,7 +18,7 @@ const app = () => (
             <Route path="/signin" exact component={Login} />
             <Route path="/members" exact component={Members} />
             <Route path="/logout" exact component={Logout} />
-      </Switch> 
+        </Switch> 
     </Layout>  
 );
 

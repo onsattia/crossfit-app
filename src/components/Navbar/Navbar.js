@@ -1,13 +1,17 @@
 import React from 'react'
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import NavigationItems from './NavigationItems/NavigationItems';
-// import './Navbar.css'
+import './Navbar.css'
 
 const navigationbar = (props) => (
     <Navbar inverse collapseOnSelect>
-      <Navbar.Collapse>
         <NavigationItems authUser={props.authUser}/>
-      </Navbar.Collapse>
+        <Nav pullRight>
+            <NavItem eventKey={1} componentClass={Link} href="/home" to="/home">
+              Home
+            </NavItem>
+        </Nav>
     </Navbar>
 )
 
