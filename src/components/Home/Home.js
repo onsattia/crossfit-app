@@ -1,20 +1,18 @@
 import React from 'react';
 import './Home.css';
 import { Table, Grid, Row, Image, Col } from 'react-bootstrap';
-import Aux from '../../hoc/Aux';
 import logo from '../../assets/images/logo.png';
 import withAuthorization from '../../hoc/withAuthorization';
 
 const home = () => {
         return (
-            <Aux>
-                <Grid>
+            <Grid>
                 <Row>
                     <Col xs={8} md={6}>
                         <Image src={logo} rounded />
                     </Col>
                     <Col xs={8} md={6}>
-                        <h2>OPENING HOURS</h2>
+                        <h3>OPENING HOURS</h3>
                         <ul>
                             <li><strong>Monday-Friday: </strong>10h to 12h - 15h to 20h</li>
                             <li><strong>Saturday: </strong>Rest Day</li>
@@ -22,6 +20,7 @@ const home = () => {
                         </ul>
                     </Col>
                 </Row>
+                <Row>
                    <Table striped bordered condensed hover>
                         <caption>PLANNING</caption>
                         <thead>
@@ -125,8 +124,8 @@ const home = () => {
                             </tr>
                         </tbody>
                     </Table>
-                </Grid>
-            </Aux>
+                </Row>
+            </Grid>
         )
 }
 

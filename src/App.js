@@ -13,7 +13,7 @@ import './App.css';
 const app = () => (
     <Layout>
         <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/home" exact component={Home} />
             <Route path="/signup" exact component={Signup} />
             <Route path="/signin" exact component={Login} />
             <Route path="/members" exact component={Members} />

@@ -3,7 +3,8 @@
     width: 750px;
 }
  img {
-     width: 300px
+     margin-top: 20px;
+     width: 300px;
  }
 /* .left {
     float: left;
@@ -13,13 +14,13 @@
     float: right;
 } */
 
-h2 { 
+h3 { 
     color: #c72e45;
-    margin: 0 0 22px;
+    margin-bottom: 20px;
     font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: left;
 }
 
 ul {
@@ -34,9 +35,12 @@ li {
 }
 
 caption {
-    padding: 20px;
+    margin-top: 50px; 
+    margin-bottom: 20px;
     color: #c72e45; 
+    font-size: 15px;
     font-weight: bold;
+    letter-spacing: 2px;
     text-align: center;
 }
 /* 

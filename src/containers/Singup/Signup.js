@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { Grid, Form, FormGroup, ControlLabel, FormControl, Button, Col, Alert} from 'react-bootstrap';
 import { auth, db } from '../../firebase';
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
+  <Grid>
+    <h2>Sign Up</h2>
     <SignUpForm history={ history }/>
-  </div>
+  </Grid>
 
 const INITIAL_STATE = {
     username: '',
@@ -44,7 +45,7 @@ onSubmit = (event) => {
           db.doCreateUser(authUser.user.uid, username, email)
           .then(() => {
             this.setState({ ...INITIAL_STATE });
-            history.push("/");
+            history.push("/home");
           })
           .catch(error => {
             this.setState(byPropKey('error', error));
@@ -73,41 +74,71 @@ render() {
     username === '';
   
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-            value={username}
-            onChange={event => this.setState(byPropKey('username', event.target.value))}
-            type="text"
-            placeholder="Full Name"
-        />
-        <br/>
-        <input
-            value={email}
-            onChange={event => this.setState(byPropKey('email', event.target.value))}
-            type="text"
-            placeholder="Email Address"
-        />
-        <br/>
-        <input
-            value={passwordOne}
-            onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-            type="password"
-            placeholder="Password"
-        />
-        <br/>
-        <input
-            value={passwordTwo}
-            onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-            type="password"
-            placeholder="Confirm Password"
-        />
-        <br/>
-        <button disabled={isInvalid} type="submit">
-            Sign Up
-        </button>
+      <Form horizontal onSubmit={this.onSubmit}>
+          <FormGroup controlId="formHorizontalFullName">
+            <Col componentClass={ControlLabel} sm={2}>
+              Full Name
+            </Col>
+            <Col sm={10}>
+              <FormControl  
+                value={username}
+                onChange={event => this.setState(byPropKey('username', event.target.value))}
+                type="text"
+                placeholder="Full Name"
+              />
+            </Col>
+          </FormGroup>
 
-        { error && <p>{error.message}</p> }
-      </form>
+          <FormGroup controlId="formHorizontalEmail">
+            <Col componentClass={ControlLabel} sm={2}>
+              Email
+            </Col>
+            <Col sm={10}>
+              <FormControl  
+                value={email}
+                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                type="text"
+                placeholder="Email Address"
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup controlId="formHorizontalPassword">
+            <Col componentClass={ControlLabel} sm={2}>
+              Password
+            </Col>
+            <Col sm={10}>
+              <FormControl 
+                value={passwordOne}
+                onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                type="password"
+                placeholder="Password" 
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup controlId="formHorizontalConfirmPassword">
+            <Col componentClass={ControlLabel} sm={2}>
+              Confirm Password
+            </Col>
+            <Col sm={10}>
+              <FormControl 
+                value={passwordTwo}
+                onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                type="password"
+                placeholder="Confirm Password" 
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col smOffset={2} sm={10}>
+              <Button disabled={isInvalid} type="submit">Sign Up</Button>
+            </Col>
+          </FormGroup>
+            { error &&  <Alert bsStyle="danger"><p>{error.message}</p></Alert> }
+      </Form>
+      
     );
   }
 }

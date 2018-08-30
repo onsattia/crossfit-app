@@ -14,7 +14,7 @@ const navigationItems = ({ authUser }) =>
 
 const NavigationAuth = () =>
     <Nav pullRight>
-        <LinkContainer to="/">
+        <LinkContainer to="/home">
             <NavItem eventKey={3}>Home</NavItem>
         </LinkContainer>
         <LinkContainer to="/members">

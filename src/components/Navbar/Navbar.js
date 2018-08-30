@@ -5,12 +5,9 @@ import NavigationItems from './NavigationItems/NavigationItems';
 
 const navigationbar = (props) => (
     <Navbar inverse collapseOnSelect>
-      <Navbar.Header>
-        <Navbar.Brand>
-          CrossFit
-        </Navbar.Brand>
-      </Navbar.Header>
+      <Navbar.Collapse>
         <NavigationItems authUser={props.authUser}/>
+      </Navbar.Collapse>
     </Navbar>
 )
 
