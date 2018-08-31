@@ -6,12 +6,17 @@ import './Navbar.css'
 
 const navigationbar = (props) => (
     <Navbar inverse collapseOnSelect>
-        <NavigationItems authUser={props.authUser}/>
-        <Nav pullRight>
-            <NavItem eventKey={1} componentClass={Link} href="/home" to="/home">
-              Home
-            </NavItem>
-        </Nav>
+        <Navbar.Header>
+            <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+            <Nav>
+                <NavItem eventKey={1} componentClass={Link} href="/home" to="/home">
+                    CrossFit
+                </NavItem>
+            </Nav>
+            <NavigationItems authUser={props.authUser}/>
+        </Navbar.Collapse>
     </Navbar>
 )
 

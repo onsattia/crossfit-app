@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import { Grid, Row, Image, Col } from 'react-bootstrap';
 import logo from '../../assets/images/logo.png';
+
 // import withAuthorization from '../../hoc/withAuthorization';
 
 const home = () => {
@@ -25,7 +26,7 @@ const home = () => {
                     <Col xs={6} md={4}>
                         <Image src="https://d1s2fu91rxnpt4.cloudfront.net/mainsite/w20180830/thumbnail/a461ae6b35857d6_717970.jpg" />
                     </Col>
-                    <Col xs={6} md={4}>
+                    <Col xs={8} md={4}>
                         <h4>Thursday</h4>
                         <p>
                             For time:<br />
@@ -63,7 +64,7 @@ const home = () => {
                     <Col xs={6} md={4}>
                         <Image src="https://d1s2fu91rxnpt4.cloudfront.net/mainsite/w20180821/thumbnail/3b9c551aca4cb15_717853.jpg" />
                     </Col>
-                    <Col xs={6} md={4}>
+                    <Col xs={8} md={4}>
                         <h4>Saturday</h4>
                         <p><strong>Rest Day</strong></p>
                     </Col>

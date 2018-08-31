@@ -91,7 +91,7 @@ render() {
 
           <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>
-              Email
+              Email Address
             </Col>
             <Col sm={10}>
               <FormControl  

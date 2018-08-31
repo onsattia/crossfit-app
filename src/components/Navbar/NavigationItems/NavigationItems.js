@@ -6,9 +6,10 @@ import AuthUserContext from '../../../AuthUserContext';
 
 const navigationItems = ({ authUser }) =>
     <AuthUserContext.Consumer>
-        {authUser => authUser
-        ? <NavigationAuth />
-        : <NavigationNonAuth />
+        {
+            authUser => authUser
+            ? <NavigationAuth />
+            : <NavigationNonAuth />
         }
     </AuthUserContext.Consumer>
 
@@ -21,15 +22,12 @@ const NavigationAuth = () =>
             Log out
         </NavItem>
     </Nav>
-
+        
 const NavigationNonAuth = () =>
     <Nav pullRight>
         <NavItem eventKey={4} componentClass={Link} href="/signin" to="/signin">
             Sign In
-        </NavItem>
-        <NavItem eventKey={5} componentClass={Link} href="/signup" to="/signup">
-            Sign Up
-        </NavItem>   
+        </NavItem> 
     </Nav>
 
 export default navigationItems;
