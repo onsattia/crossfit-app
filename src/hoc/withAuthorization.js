@@ -1,10 +1,10 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
-import AuthUserContext from '../AuthUserContext';
-import { firebase } from '../firebase';
+import AuthUserContext from "../AuthUserContext";
+import { firebase } from "../firebase";
 
-const withAuthorization = (authCondition) => (Component) => {
+const withAuthorization = authCondition => Component => {
   class WithAuthorization extends React.Component {
     componentDidMount() {
       firebase.auth.onAuthStateChanged(authUser => {
@@ -17,13 +17,13 @@ const withAuthorization = (authCondition) => (Component) => {
     render() {
       return (
         <AuthUserContext.Consumer>
-          {authUser => authUser ? <Component /> : null}
+          {authUser => (authUser ? <Component /> : null)}
         </AuthUserContext.Consumer>
       );
     }
   }
 
   return withRouter(WithAuthorization);
-}
+};
 
 export default withAuthorization;

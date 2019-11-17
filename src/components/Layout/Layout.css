@@ -1,13 +1,13 @@
 footer {
-    width: 100%;
-    padding: 30px 0;
-    background-color: #F4F4F4;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #f4f4f4;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 p {
-    text-align: left;
-    box-sizing: border-box;
-} 
+  text-align: left;
+  box-sizing: border-box;
+}

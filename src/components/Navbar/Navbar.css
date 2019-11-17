@@ -1,0 +1,13 @@
+a,
+a:hover,
+a:active,
+a:focus {
+  color: #9d9d9d;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: white;
+}

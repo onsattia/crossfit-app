@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { auth } from '../../firebase';
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { auth } from "../../firebase";
 
 class Logout extends Component {
+  componentWillMount() {
+    auth.doSignOut();
+  }
 
-
-componentWillMount () {
-  auth.doSignOut();
-}
-
-
-render() {
-    return (
-      <Redirect to="signin" />
-    );
+  render() {
+    return <Redirect to="login" />;
   }
 }
 
